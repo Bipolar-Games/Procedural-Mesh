@@ -1,10 +1,10 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace Bipolar.ProceduralMeshes
+namespace Bipolar.ProceduralMeshes.Editor
 {
-    [CustomEditor(typeof(ProceduralMeshAsset), editorForChildClasses: true)]
-    public class ProceduralMeshAssetEditor : UnityEditor.Editor
+    [CustomEditor(typeof(ProceduralMesh), editorForChildClasses: true)]
+    public class ProceduralMeshEditor : UnityEditor.Editor
     {
         private MeshPreview meshPreview;
         private Mesh previewMesh;
@@ -17,10 +17,10 @@ namespace Bipolar.ProceduralMeshes
             meshPreview ??= new MeshPreview(previewMesh);
         }
 
-        [MenuItem("CONTEXT/" + nameof(ProceduralMeshAsset) + "/Export Mesh")]
+        [MenuItem("CONTEXT/" + nameof(ProceduralMesh) + "/Export Mesh")]
         private static void ExportMesh(MenuCommand command)
         {
-            var meshAsset = (ProceduralMeshAsset)command.context;
+            var meshAsset = (ProceduralMesh)command.context;
 
             var mesh = new Mesh();
             meshAsset.BuildMesh(mesh);
@@ -44,7 +44,7 @@ namespace Bipolar.ProceduralMeshes
 
         public override void OnPreviewGUI(Rect r, GUIStyle background)
         {
-            ((ProceduralMeshAsset)target).BuildMesh(previewMesh);
+            ((ProceduralMesh)target).BuildMesh(previewMesh);
             meshPreview.OnPreviewGUI(r, background);
         }
 
