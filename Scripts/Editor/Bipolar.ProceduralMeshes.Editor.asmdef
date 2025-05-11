@@ -1,0 +1,18 @@
+{
+    "name": "Bipolar.ProceduralMeshes.Editor",
+    "rootNamespace": "Bipolar.ProceduralMeshes.Editor",
+    "references": [
+        "GUID:a4ddd416cd149a94898b6ac0f9d9d7e0"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
