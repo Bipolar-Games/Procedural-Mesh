@@ -1,10 +1,11 @@
-﻿using UnityEditor;
+﻿using System;
+using UnityEditor;
 using UnityEngine;
 
 namespace Bipolar.ProceduralMeshes.Editor
 {
     [CustomEditor(typeof(ProceduralMesh), editorForChildClasses: true)]
-    public class ProceduralMeshEditor : UnityEditor.Editor
+    public class ProceduralMeshEditor : UnityEditor.Editor, IDisposable
     {
         private MeshPreview meshPreview;
         private Mesh previewMesh;
@@ -51,15 +52,19 @@ namespace Bipolar.ProceduralMeshes.Editor
         public override void OnPreviewSettings()
         {
             base.OnPreviewSettings();
-            meshPreview.OnPreviewSettings();
+            meshPreview?.OnPreviewSettings();
         }
 
         private void OnDisable()
         {
+            Dispose();
+            previewMesh = null;
+        }
+
+        public void Dispose()
+        {
             meshPreview.Dispose();
             meshPreview = null;
-
-            previewMesh = null;
         }
     }
 }
