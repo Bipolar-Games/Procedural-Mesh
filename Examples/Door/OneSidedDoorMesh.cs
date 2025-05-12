@@ -154,6 +154,7 @@ namespace Bipolar.ProceduralMeshes.Examples
                 uvs[21] = new Vector2(oneOverWidth * (halfWidth + halfHoleWidth), (holeHeight - depth) * oneOverHeight);
             }
 
+            mesh.Clear();
             mesh.vertices = vertices;
             mesh.triangles = triangles;
             mesh.uv = uvs;

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7018f620230280a40b459cdc15f7c62f, type: 3}
   m_Name: One Sided Door Mesh
   m_EditorClassIdentifier: 
-  size: {x: 4, y: 3}
-  holeSize: {x: 1, y: 2}
+  size: {x: 5, y: 3}
+  holeSize: {x: 1.27, y: 2}
   depth: 0.5
   pivotPosition: 0
