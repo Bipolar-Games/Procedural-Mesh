@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b64ce65ef4195f34da98a0f63683440d, type: 3}
   m_Name: Procedural Disk
   m_EditorClassIdentifier: 
-  <Radius>k__BackingField: 1
-  <Resolution>k__BackingField: 10
+  <Radius>k__BackingField: 2
+  <Resolution>k__BackingField: 20

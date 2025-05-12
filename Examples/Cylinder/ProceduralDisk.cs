@@ -14,8 +14,12 @@ namespace Bipolar.ProceduralMeshes.Examples
         public override void BuildMesh(Mesh mesh)
         {
             var vertices = new Vector3[Resolution + 1];
-            vertices[0] = Vector3.zero;
             var triangles = new int[Resolution * 3];
+            var uvs = new Vector2[Resolution + 1];
+
+            vertices[0] = Vector3.zero;
+            uvs[0] = new Vector2(0.5f, 0.5f);
+
             int currentTriangleIndex = 0;   
 
             float angleDelta = 360f / Resolution;
@@ -25,6 +29,7 @@ namespace Bipolar.ProceduralMeshes.Examples
                 float angle = angleDelta * i;
                 Vector3 direction = Quaternion.AngleAxis(angle, Vector3.up) * Vector3.forward;
                 vertices[index] = direction * Radius;
+                uvs[index] = new Vector2(1 + direction.x, 1 + direction.z) / 2f;
                 int previousIndex = i == 0 ? Resolution : i;
                 AddTriangle(0, previousIndex, index);
             }
@@ -39,6 +44,8 @@ namespace Bipolar.ProceduralMeshes.Examples
             mesh.Clear();
             mesh.vertices = vertices;
             mesh.triangles = triangles;
+            mesh.uv = uvs;  
+            mesh.RecalculateNormals();
         }
     }
 }
