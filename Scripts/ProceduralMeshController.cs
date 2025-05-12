@@ -81,7 +81,6 @@ namespace Bipolar.ProceduralMeshes
                 proceduralMesh.OnChanged -= Refresh;
         }
 
-        [ContextMenu("Regenerate")]
         private void OnValidate()
         {
 #if UNITY_EDITOR
