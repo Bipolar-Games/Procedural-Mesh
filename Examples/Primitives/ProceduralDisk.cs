@@ -2,6 +2,7 @@ using UnityEngine;
 
 namespace Bipolar.ProceduralMeshes.Examples
 {
+
     [CreateAssetMenu(menuName = CreateAssetMenuPath.Root + "Disk Procedural Mesh")]
     public class ProceduralDisk : ProceduralMesh
     {
